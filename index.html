@@ -1,15 +1,62 @@
 <!doctype html>
 <head>
-  <title>Connect 4</title>
+  <title>connect4</title>
   <link href="connect4.css" rel="stylesheet">
+  <link href="page.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/jasmine-core@4.1.0/lib/jasmine-core/jasmine.css" />
 </head>
 <body>
-
+<div id="under-game">increase window screen in both dimensions (700px, 800px)</div>
 <div id="game">
+  <div id="start-screen">
+    <h1 id="game-h1">connect4</h1>
+    <p id="game-p">copy arrangment</p>
+    <form>
+      <p id="game-form-p">colors</p>
+      <table id="game-form-table-color">
+        <tr>
+          <td><label for="p1Color">player 1</label></td>
+          <td><label for="p2Color">player 2</label></td>
+        </tr>
+        <tr>
+          <td><input type="color" id="p1Color" class="GameInputColor" value="#ff0000"></td>
+          <td><input type="color" id="p2Color" class="GameInputColor" value="#ffff00"></td>
+        </tr>
+      </table>
+      <p id="game-form-p">game type</p>
+      <table id="game-form-table-radio">
+        <tr><td><input type="radio" id="one-game" name="game_type" checked="true"><label for="one-game">One Game</label></td></tr>
+        <tr><td><input type="radio" id="multi-game" name="game_type"><label for="multi-game">Multi-Game</label></td></tr>
+        <tr id="game-num">
+          <td><label for="num-games">games</label></td>
+          <td><input type="number" id="num-games" placeholder="3"></td>
+        </tr>
+      </table>
+      <input type="submit" id="submit"value="start">
+    </form>
+  </div>
+  <div id="game-msg">
+    <h1>game</h1>
+    <p id="gameResult"></p>
+    <p id="coinResult"></p>
+    <p id="setResult"></p>
+    <p id="endSet"></p>
+    <button id="againBtn">again</button>
+  </div>
   <table id="board"></table>
+  <p id="game-footer"></p>
 </div>
-
+<!--
+<script src="https://unpkg.com/jasmine-core@4.1.0/lib/jasmine-core/jasmine.js"></script>
+<script src="https://unpkg.com/jasmine-core@4.1.0/lib/jasmine-core/jasmine-html.js"></script>
+<script src="https://unpkg.com/jasmine-core@4.1.0/lib/jasmine-core/boot0.js"></script>
+<script src="https://unpkg.com/jasmine-core@4.1.0/lib/jasmine-core/boot1.js"></script>
+-->
+<script src="page.js"></script>
 <script src="connect4.js"></script>
-
+<!--
+<script src="page.test.js"></script>
+<script src="connect4.test.js"></script>
+-->
 </body>
 </html>
